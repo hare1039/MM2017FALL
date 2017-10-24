@@ -10,5 +10,5 @@ This assignment includes
 3. a photo and a table
 
 A photo
-![picture alt](http://www.elearn.ndhu.edu.tw/moodle/file.php/72180/photo.jpg "Test Title")
+![pic](https://www.csie.ndhu.edu.tw/wp-content/uploads/2016/09/ndhucsie-logo-160905.png "Test Title")
 
