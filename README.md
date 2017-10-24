@@ -9,3 +9,6 @@ This assignment includes
 2. 3 number items
 3. a photo and a table
 
+A photo
+![picture alt](http://www.elearn.ndhu.edu.tw/moodle/file.php/72180/photo.jpg "Test Title")
+
