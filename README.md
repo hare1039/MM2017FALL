@@ -17,4 +17,5 @@ important subject
 First year | Second year | Third year
 -----------|-------------|------------
 Programlang| d.structure | com.structure
+Calculus   | algorithm   | combinelang
 
