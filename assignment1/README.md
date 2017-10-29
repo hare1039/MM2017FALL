@@ -27,4 +27,17 @@ Result discussion:
     to perform the transform, it will keep the same size as the original picture does.
   * The second approach of second approach, which we change the dither matrix, could found that if we use different matrix, the result
     will be different(the picture of original matrix generated looks more propper).
+ 
+This time, I have learn much from this assignment. Learn how to uplaod file to Github; upload image which are going to use
+in md file; how to manage reposity, and of course how to write opencv program (and etc.).
+
+Through the coding procedure, I had read many examples and skills of how to deal with the image by using opencv. I had already installed
+it before, thats a good thing, but bad thing is that I did not already familiar with this language. Found some good pdf files I had from
+other courses and website to read through the similiar examples, then plan what I was going to do later.
+
+Though not first time using opencv, its till some obstacle exist. Ignore the countless bugs through programing, the most thing is that
+I had forget the .clone() thing, which cause some bugs, and I even did not notice this until end. Through time past by, when I become more skillful, this maybe a shame of myself, but probably not: its all sucess that being build on
+countless effort and failures.
+
+*Read, coding, debug. This is what I had done this program, by this circulation.
 
