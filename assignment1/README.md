@@ -39,7 +39,8 @@ Though not first time using opencv, its till some obstacle exist. Ignore the cou
 I had forget the .clone() thing, which cause some bugs, and I even did not notice this until end. Through time past by, when I become more skillful, this maybe a shame of myself, but probably not: its all sucess that being build on
 countless effort and failures.
 
-**Notice(Very Important): Since I had change the file name, the previous update log(multimedia hw-1) is not shared with the current file(assignment1). So if you want to find previous commits, you should go through the history of the reposity itself.**
+**Notice(Very Important): Since I had change the file name, the previous update log(multimedia hw-1) is not shared with the current file(assignment1). So if you want to find previous commits, you should go through the history 
+(see [](https://github.com/ndhu410421304/MM2017FALL/commits/master "History of the reposity") of the reposity itself.**
 
 *Readding, coding, debugging. This is what I had done this program, by this circulation.*
 
