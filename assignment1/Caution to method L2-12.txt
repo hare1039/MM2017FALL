@@ -1,0 +1,3 @@
+Build a coloring loop which is the method from L2-12, perform 
+gray-to--black/white. Caution : due to the size of the new image 
+we generate is too big, it may no fit the window(just show part.) 

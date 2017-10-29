@@ -1,3 +1,0 @@
-﻿  stdafx.cpp
-  410421304_multimedia_hw1.cpp
-d:\multimedia hw\multimedia hw1\410421304_multimedia_hw1\410421304_multimedia_hw1.cpp(5): fatal error C1083: 無法開啟包含檔案: 'opencv2/opencv.hpp': No such file or directory

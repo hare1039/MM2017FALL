@@ -1,6 +1,0 @@
-﻿  stdafx.cpp
-  410421304_multimedia_hw1.cpp
-410421304_multimedia_hw1.obj : error LNK2019: 無法解析的外部符號 "private: void __thiscall cv::String::deallocate(void)" (?deallocate@String@cv@@AAEXXZ) 在函式 "public: __thiscall cv::String::~String(void)" (??1String@cv@@QAE@XZ) 中被參考
-C:\opencv\build\x64\vc14\lib\opencv_world330.lib : warning LNK4272: 程式庫電腦類型 'x64' 與目標電腦類型 'x86' 發生衝突
-C:\opencv\build\x64\vc14\lib\opencv_world330d.lib : warning LNK4272: 程式庫電腦類型 'x64' 與目標電腦類型 'x86' 發生衝突
-D:\multimedia hw\multimedia hw1\410421304_multimedia_hw1\Debug\410421304_multimedia_hw1.exe : fatal error LNK1120: 1 個無法解析的外部符號
