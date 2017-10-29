@@ -2,6 +2,6 @@
   正在產生程式碼
   1 of 195 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    12 functions had inline decision re-evaluated but remain unchanged
   已完成程式碼產生
-  410421304_multimedia_hw1.vcxproj -> D:\multimedia-assignment\410421304_multimedia_hw1\x64\Release\410421304_multimedia_hw1.exe
+  410421304_multimedia_hw1.vcxproj -> D:\multimedia-assignment\assignment1\x64\Release\410421304_multimedia_hw1.exe
