@@ -41,5 +41,5 @@ countless effort and failures.
 
 **Notice(Very Important): Since I had change the file name, the previous update log(multimedia hw-1) is not shared with the current file(assignment1). So if you want to find previous commits, you should go through the history of the reposity itself.**
 
-*Read, coding, debug. This is what I had done this program, by this circulation.*
+*Readding, coding, debugging. This is what I had done this program, by this circulation.*
 
