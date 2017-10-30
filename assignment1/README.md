@@ -44,3 +44,5 @@ of the reposity itself.**
 
 *Readding, coding, debugging. This is what I had done this program, by this circulation.*
 
+# Teacher's Comment
+* Good job. I like your report. Your English is good. Well done! It's difficult to learn a thing from the scratch. However, if this thing helps you upgrade your professional skill for future career development, then the effort and time taken by it are worthwhile. Keep practicing for upgrading more.   
