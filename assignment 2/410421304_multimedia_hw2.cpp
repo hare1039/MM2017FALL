@@ -29,6 +29,8 @@ int main(int argc, char** argv)
         //cout<<"1";
     }
 
+    out.write((const char*)&siz[0], buff*4);
+
     out.close();
     return 0;
 }
