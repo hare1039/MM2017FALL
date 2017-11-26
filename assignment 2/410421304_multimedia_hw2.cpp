@@ -21,7 +21,7 @@ int main(int argc, char** argv)
     out.open("sintest.wav", ios::binary);
 
     int siz[buff];
-    memset(siz, 0 , buff*4); //set memory space for siz
+    memset(siz, 0 , buff*2); //set memory space for siz
 
     for (int i = 0; i < buff; i++)
     {
@@ -29,7 +29,7 @@ int main(int argc, char** argv)
         //cout<<"1";
     }
 
-    out.write((const char*)&siz[0], buff*4);
+    out.write((const char*)&siz[0], buff*2);
 
     out.close();
     return 0;
