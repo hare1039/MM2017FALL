@@ -3,6 +3,7 @@
 #include <string>
 #include <stdio.h>
 #include <string.h>
+#include <cmath>
 
 using namespace std;
 
@@ -21,6 +22,12 @@ int main(int argc, char** argv)
 
     int siz[buff];
     memset(siz, 0 , buff*4); //set memory space for siz
+
+    for (int i = 0; i < buff; i++)
+    {
+        siz[i] = sin((2 * 3.14)* freq * i / Fs )*amp; // formula in pdf
+        //cout<<"1";
+    }
 
     out.close();
     return 0;
