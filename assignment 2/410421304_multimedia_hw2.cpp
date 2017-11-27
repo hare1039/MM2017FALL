@@ -20,7 +20,7 @@ int main(int argc, char** argv)
     ofstream out;
     out.open("sintest.wav", ios::binary);
 
-    int siz[buff];
+    double siz[buff];
     memset(siz, 0 , buff*2); //set memory space for siz
 
     for (int i = 0; i < buff; i++)
