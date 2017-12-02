@@ -38,7 +38,7 @@ int main(int argc, char** argv)
     out.write("data", 4);
     write<int>(out, buff*sizeof(signed short));
 
-    double siz[buff];
+    int siz[buff];
     memset(siz, 0 , buff*2); //set memory space for siz
 
     for (int i = 0; i < buff; i++)
