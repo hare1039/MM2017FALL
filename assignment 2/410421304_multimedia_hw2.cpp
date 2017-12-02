@@ -9,7 +9,7 @@ using namespace std;
 
 const int freq = 400;
 const int Fs = 8000; //sampler rate
-const int sec = 1;
+const int sec = 4;
 const int channel = 1;
 const int bit = 16;
 const int amp = 32767; //16 bit: 32767~-32768
@@ -41,11 +41,37 @@ int main(int argc, char** argv)
     short siz[buff];
     memset(siz, 0 , buff*2); //set memory space for siz
 
-    for (int i = 0; i < buff; i++)
+    /*
+
+    for (int i = 0; i < buff/4; i++)
     {
         siz[i] = sin((2 * 3.14)* freq * i / Fs )*amp; // formula in pdf
-        //cout<<"1";
     }
+
+    */
+
+    //test
+
+    for (int i = 0; i < buff/4; i++)
+    {
+        siz[i] = sin((2 * 3.14)* 98 * i / Fs )*amp; // formula in pdf
+    }
+
+    for (int i = buff/4; i < buff/2; i++)
+    {
+        siz[i] = sin((2 * 3.14)* 82 * i / Fs )*amp; // formula in pdf
+    }
+
+    for (int i = buff/2; i < (buff/2+buff/4); i++)
+    {
+        siz[i] = sin((2 * 3.14)* 98 * i / Fs )*amp; // formula in pdf
+    }
+
+    for (int i = (buff/2+buff/4); i < buff; i++)
+    {
+        siz[i] = sin((2 * 3.14)* 82 * i / Fs )*amp; // formula in pdf
+    }
+
 
     out.write((const char*)&siz[0], buff*2);
 
