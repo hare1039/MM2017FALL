@@ -8,12 +8,13 @@
 using namespace std;
 
 const int freq = 400;
-const int Fs = 8000; //sampler rate
-const int sec = 17;
+const double Fs = 8000; //sampler rate
+const int sec = 5;
 const int channel = 1;
 const int bit = 16;
 const int amp = 32767; //16 bit: 32767~-32768
 const int buff = sec*Fs*channel;
+const double D = 1;
 
 template<typename Type> void write(ofstream& out, const Type& sting)
 {
@@ -29,14 +30,24 @@ int main(int argc, char** argv)
     imnotes.open("music note.txt");
 
     int counter = 0;
+    double metre =0;
 
     if(imnotes.is_open())
     {
         while(!imnotes.eof())
         {
-            imnotes>>singlenote;
-            notes[counter] = singlenote;
-            counter = counter+1;
+            if(metre == 0)
+            {
+                imnotes>>metre;
+                cout<<metre<<"\n";
+            }
+            else
+            {
+                imnotes>>singlenote;
+                notes[counter] = singlenote;
+                counter = counter+1;
+            }
+
         }
     }
 
@@ -108,7 +119,7 @@ int main(int argc, char** argv)
     //input wav format
 
     ofstream out;
-    out.open("levelmixtest.wav", ios::binary);
+    out.open("levelmixtest2.wav", ios::binary);
 
     out.write("RIFF", 4);
     write<int>(out, 36 + (buff*sizeof(signed short)));
@@ -144,40 +155,51 @@ int main(int argc, char** argv)
 
     */
 
-    double adder = 0.0558;
-    //cout << adder << "f";
-    counter = 1;
-    while(counter != 17)
+    int i = 0;
+    counter = 0;
+    double doublecounter = 0;
+
+    for(i=0; i<buff; i++)
     {
-        int i=0;
-        for(i=((counter-1)*adder)*buff; i<(counter*adder)*buff; i++)
+        double checker = (i/Fs);
+        if(checker < 1)
+        siz2[i] = sin((2 * 3.14)* 1 * i / Fs )*amp;
+        else
         {
-            double checker = ((counter+1)*adder);
-            if(checker > 1)
-            siz2[i] = sin((2 * 3.14)* 1 * i / Fs )*amp;
-            else
-            siz2[i] = sin((2 * 3.14)* level2[counter-1] * i / Fs )*amp; // formula in pdf
+            siz2[i] = sin((2 * 3.14)* level2[counter] * i / Fs )*amp; // formula in pdf
+            doublecounter+=(1/Fs);
+            if(doublecounter >= metre)
+            {
+                counter+=1;
+                doublecounter=0;
+                cout<<level2[counter];
+            }
         }
-        counter++;
     }
 
-    //out.write((const char*)&siz[0], buff*2);
+    cout<<i<<"\n";
+    counter = 0;
+    doublecounter = 0;
 
-    counter = 1;
-
-    while(counter != 17)
+    for(i=0; i<buff; i++)
     {
-        int i=0;
-        for(i=((counter-1)*adder)*buff; i<(counter*adder)*buff; i++)
+        double checker = (i/Fs);
+        if((sec-checker) <= 1)
+        siz5[i] = sin((2 * 3.14)* 1 * i / Fs )*amp;
+        else
         {
-            double checker = ((counter-1)*adder);
-            if(checker == 0)
-            siz5[i] = sin((2 * 3.14)* 1 * i / Fs )*amp;
-            else
-            siz5[i] = sin((2 * 3.14)* level5[counter-2] * i / Fs )*amp; // formula in pdf
+            siz5[i] = sin((2 * 3.14)* level5[counter] * i / Fs )*amp; // formula in pdf
+            doublecounter+=(1/Fs);
+            if(doublecounter >= metre)
+            {
+                counter+=1;
+                doublecounter=0;
+                cout<<level5[counter];
+            }
         }
-        counter++;
     }
+    doublecounter = 1/800;
+    cout<<doublecounter;
 
     counter = 0;
 
@@ -189,25 +211,14 @@ int main(int argc, char** argv)
             siz[i] = 32767;
         else if(siz[i] < -32768)
             siz[i] = -32768;
+        //if(i > 0.94*buff)
+        //    siz[i] = siz5[i];
     }
-
-    /*
-    for(int i=0; i<buff; i++)
-    {
-        siz[i] = (int)siz2[i];
-
-        if(siz[i] > 32767)
-            siz[i] = 32767;
-        else if(siz[i] < -32768)
-            siz[i] = -32768;
-    }
-    */
-
 
 
     out.write((const char*)&siz[0], buff*2);
 
-    cout<<"level mix test output complete.";
+    cout<<"level mix test2 output complete.";
 
     out.close();
     return 0;
