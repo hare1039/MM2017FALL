@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//initial part
 const int freq = 400;
 const double Fs = 8000; //sampler rate
 const int sec = 5;
@@ -23,6 +24,7 @@ template<typename Type> void write(ofstream& out, const Type& sting)
 
 int main(int argc, char** argv)
 {
+    //input part
     char notes[1000]; // music note in char form
     char singlenote;
 
@@ -39,7 +41,6 @@ int main(int argc, char** argv)
             if(metre == 0)
             {
                 imnotes>>metre;
-                cout<<metre<<"\n";
             }
             else
             {
@@ -47,7 +48,6 @@ int main(int argc, char** argv)
                 notes[counter] = singlenote;
                 counter = counter+1;
             }
-
         }
     }
 
@@ -113,11 +113,7 @@ int main(int argc, char** argv)
         counter3++;
     }
 
-
-    //end of process
-
-    //input wav format
-
+    //wav format setting
     ofstream out;
     out.open("normalmerge.wav", ios::binary);
 
@@ -185,26 +181,17 @@ int main(int argc, char** argv)
     out800.write("data", 4);
     write<int>(out800, buff*sizeof(signed short));
 
-    //end of process format
 
-    //output
+    //arithmetic part
 
     //for mix
     short siz[buff];
-    //for lvls
+    //for levels
     short siz2[buff];
     short siz5[buff];
 
     memset(siz, 0 , buff*2); //set memory space for siz
 
-    /*
-
-    for (int i = 0; i < buff; i++)
-    {
-        siz[i] = sin((2 * 3.14)* freq * i / Fs )*amp; // formula in pdf
-    }
-
-    */
 
     int i = 0;
     counter = 0;
@@ -217,18 +204,16 @@ int main(int argc, char** argv)
         siz2[i] = sin((2 * 3.14)* 1 * i / Fs )*amp;
         else
         {
-            siz2[i] = sin((2 * 3.14)* level2[counter] * i / Fs )*amp; // formula in pdf
+            siz2[i] = sin((2 * 3.14)* level5[counter] * i / Fs )*amp; // formula in pdf
             doublecounter+=(1/Fs);
             if(doublecounter >= metre)
             {
                 counter+=1;
                 doublecounter=0;
-                cout<<level2[counter];
             }
         }
     }
 
-    cout<<i<<"\n";
     counter = 0;
     doublecounter = 0;
 
@@ -239,19 +224,17 @@ int main(int argc, char** argv)
         siz5[i] = sin((2 * 3.14)* 1 * i / Fs )*amp;
         else
         {
-            siz5[i] = sin((2 * 3.14)* level5[counter] * i / Fs )*amp; // formula in pdf
+            siz5[i] = sin((2 * 3.14)* level2[counter] * i / Fs )*amp; // formula in pdf
             doublecounter+=(1/Fs);
             if(doublecounter >= metre)
             {
                 counter+=1;
                 doublecounter=0;
-                cout<<level5[counter];
             }
         }
     }
-    doublecounter = 1/800;
-    cout<<doublecounter;
 
+    //output part
     counter = 0;
 
     for(int i=0; i<buff; i++)
@@ -262,8 +245,6 @@ int main(int argc, char** argv)
             siz[i] = 32767;
         else if(siz[i] < -32768)
             siz[i] = -32768;
-        //if(i > 0.94*buff)
-        //    siz[i] = siz5[i];
     }
 
     out.write((const char*)&siz[0], buff*2);
@@ -277,13 +258,11 @@ int main(int argc, char** argv)
             siz[i] = 32767;
         else if(siz[i] < -32768)
             siz[i] = -32768;
-        //if(i > 0.94*buff)
-        //    siz[i] = siz5[i];
     }
 
     out100.write((const char*)&siz[0], buff*2);
 
-        //500 test
+    //500 test
     for(int i=0; i<buff; i++)
     {
         siz[i] = (int)(0.5*siz2[i]*cos((2 * 3.14)* 500 * i / Fs ) + 0.5*siz5[i]*cos((2 * 3.14)* 500 * i / Fs ));
@@ -292,8 +271,6 @@ int main(int argc, char** argv)
             siz[i] = 32767;
         else if(siz[i] < -32768)
             siz[i] = -32768;
-        //if(i > 0.94*buff)
-        //    siz[i] = siz5[i];
     }
 
     out500.write((const char*)&siz[0], buff*2);
@@ -307,15 +284,11 @@ int main(int argc, char** argv)
             siz[i] = 32767;
         else if(siz[i] < -32768)
             siz[i] = -32768;
-        //if(i > 0.94*buff)
-        //    siz[i] = siz5[i];
     }
 
     out800.write((const char*)&siz[0], buff*2);
 
-
-
-    cout<<"output complete.";
+    cout<<"Output complete.";
 
     out.close();
     return 0;
