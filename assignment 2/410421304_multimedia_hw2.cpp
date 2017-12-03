@@ -119,7 +119,7 @@ int main(int argc, char** argv)
     //input wav format
 
     ofstream out;
-    out.open("levelmixtest2.wav", ios::binary);
+    out.open("normalmerge.wav", ios::binary);
 
     out.write("RIFF", 4);
     write<int>(out, 36 + (buff*sizeof(signed short)));
@@ -133,6 +133,57 @@ int main(int argc, char** argv)
     write<short>(out, sizeof(signed short)*8);
     out.write("data", 4);
     write<int>(out, buff*sizeof(signed short));
+
+    //for part2 f = 100
+    ofstream out100;
+    out100.open("cosf100.wav", ios::binary);
+
+    out100.write("RIFF", 4);
+    write<int>(out100, 36 + (buff*sizeof(signed short)));
+    out100.write("WAVEfmt ", 8);
+    write<int>(out100, 16);
+    write<short>(out100, 1);
+    write<unsigned short>(out100, channel);
+    write<int>(out100, Fs);
+    write<int>(out100, Fs*channel*sizeof(signed short));
+    write<short>(out100, channel*sizeof(signed short));
+    write<short>(out100, sizeof(signed short)*8);
+    out100.write("data", 4);
+    write<int>(out100, buff*sizeof(signed short));
+
+    //for part2 f = 500
+    ofstream out500;
+    out500.open("cosf500.wav", ios::binary);
+
+    out500.write("RIFF", 4);
+    write<int>(out500, 36 + (buff*sizeof(signed short)));
+    out500.write("WAVEfmt ", 8);
+    write<int>(out500, 16);
+    write<short>(out500, 1);
+    write<unsigned short>(out500, channel);
+    write<int>(out500, Fs);
+    write<int>(out500, Fs*channel*sizeof(signed short));
+    write<short>(out500, channel*sizeof(signed short));
+    write<short>(out500, sizeof(signed short)*8);
+    out500.write("data", 4);
+    write<int>(out500, buff*sizeof(signed short));
+
+    //for part2 f = 800
+    ofstream out800;
+    out800.open("cosf800.wav", ios::binary);
+
+    out800.write("RIFF", 4);
+    write<int>(out800, 36 + (buff*sizeof(signed short)));
+    out800.write("WAVEfmt ", 8);
+    write<int>(out800, 16);
+    write<short>(out800, 1);
+    write<unsigned short>(out800, channel);
+    write<int>(out800, Fs);
+    write<int>(out800, Fs*channel*sizeof(signed short));
+    write<short>(out800, channel*sizeof(signed short));
+    write<short>(out800, sizeof(signed short)*8);
+    out800.write("data", 4);
+    write<int>(out800, buff*sizeof(signed short));
 
     //end of process format
 
@@ -215,10 +266,56 @@ int main(int argc, char** argv)
         //    siz[i] = siz5[i];
     }
 
-
     out.write((const char*)&siz[0], buff*2);
 
-    cout<<"level mix test2 output complete.";
+    //100 test
+    for(int i=0; i<buff; i++)
+    {
+        siz[i] = (int)(0.5*siz2[i]*cos((2 * 3.14)* 100 * i / Fs ) + 0.5*siz5[i]*cos((2 * 3.14)* 100 * i / Fs ));
+
+        if(siz[i] > 32767)
+            siz[i] = 32767;
+        else if(siz[i] < -32768)
+            siz[i] = -32768;
+        //if(i > 0.94*buff)
+        //    siz[i] = siz5[i];
+    }
+
+    out100.write((const char*)&siz[0], buff*2);
+
+        //500 test
+    for(int i=0; i<buff; i++)
+    {
+        siz[i] = (int)(0.5*siz2[i]*cos((2 * 3.14)* 500 * i / Fs ) + 0.5*siz5[i]*cos((2 * 3.14)* 500 * i / Fs ));
+
+        if(siz[i] > 32767)
+            siz[i] = 32767;
+        else if(siz[i] < -32768)
+            siz[i] = -32768;
+        //if(i > 0.94*buff)
+        //    siz[i] = siz5[i];
+    }
+
+    out500.write((const char*)&siz[0], buff*2);
+
+    //800 test
+    for(int i=0; i<buff; i++)
+    {
+        siz[i] = (int)(0.5*siz2[i]*cos((2 * 3.14)* 800 * i / Fs ) + 0.5*siz5[i]*cos((2 * 3.14)* 800 * i / Fs ));
+
+        if(siz[i] > 32767)
+            siz[i] = 32767;
+        else if(siz[i] < -32768)
+            siz[i] = -32768;
+        //if(i > 0.94*buff)
+        //    siz[i] = siz5[i];
+    }
+
+    out800.write((const char*)&siz[0], buff*2);
+
+
+
+    cout<<"output complete.";
 
     out.close();
     return 0;
