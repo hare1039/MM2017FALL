@@ -22,25 +22,94 @@ template<typename Type> void write(ofstream& out, const Type& sting)
 
 int main(int argc, char** argv)
 {
-    char notes[1000];
+    char notes[1000]; // music note in char form
+    char singlenote;
 
     ifstream imnotes;
     imnotes.open("music note.txt");
+
+    int counter = 0;
 
     if(imnotes.is_open())
     {
         while(!imnotes.eof())
         {
-            imnotes>>notes;
-            cout<<notes;
+            imnotes>>singlenote;
+            notes[counter++] = singlenote;
+            cout<<singlenote;
         }
     }
 
     cout<<"\n";
 
+    //process with input notes
+
+    counter = 0;
+    int counter2 = 0;
+    int intnotes[1000]; //array to set notes in decimal form
+
+    while(counter!=1000)
+    {
+        if((notes[counter] >= 48) && (notes[counter] <= 57))
+        {
+            intnotes[counter2] = notes[counter] - 48;
+            counter2++;
+        }
+        counter++;
+    }
+
+    int counter3 = 0;
+
+    double level2[1000];
+    double level5[1000];
+
+    while(counter3 < counter2)
+    {
+        if(intnotes[counter3] == 0)
+        {
+            level2[counter3] = 1;
+            level2[counter3] = 1;
+        }
+        else if(intnotes[counter3] == 1)
+        {
+            level2[counter3] = 65;
+            level2[counter3] = 523;
+        }
+        else if(intnotes[counter3] == 2)
+        {
+            level2[counter3] = 73;
+            level2[counter3] = 587;
+        }
+        else if(intnotes[counter3] == 3)
+        {
+            level2[counter3] = 82;
+            level2[counter3] = 659;
+        }
+        else if(intnotes[counter3] == 4)
+        {
+            level2[counter3] = 87;
+            level2[counter3] = 699;
+        }
+        else if(intnotes[counter3] == 5)
+        {
+            level2[counter3] = 98;
+            level2[counter3] = 784;
+        }
+        else if(intnotes[counter3] == 6)
+        {
+            level2[counter3] = 124;
+            level2[counter3] = 988;
+        }
+        cout<<level2[counter3]<<" ";
+        counter3++;
+    }
+
+    //end of process
+
+    //input wav format
 
     ofstream out;
-    out.open("sintest.wav", ios::binary);
+    out.open("level2test.wav", ios::binary);
 
     out.write("RIFF", 4);
     write<int>(out, 36 + (buff*sizeof(signed short)));
@@ -55,40 +124,36 @@ int main(int argc, char** argv)
     out.write("data", 4);
     write<int>(out, buff*sizeof(signed short));
 
+    //end of process format
+
+    //output
+
     short siz[buff];
     memset(siz, 0 , buff*2); //set memory space for siz
 
     /*
 
-    for (int i = 0; i < buff/4; i++)
+    for (int i = 0; i < buff; i++)
     {
         siz[i] = sin((2 * 3.14)* freq * i / Fs )*amp; // formula in pdf
     }
 
     */
 
-    //test
-
-    for (int i = 0; i < buff/4; i++)
+    double adder = 0.0675;
+    //cout << adder << "f";
+    counter = 1;
+    while(counter != 15)
     {
-        siz[i] = sin((2 * 3.14)* 98 * i / Fs )*amp; // formula in pdf
+        int i=0;
+        for(i=((counter-1)*adder)*buff; i<(counter*adder)*buff; i++)
+        {
+            siz[i] = sin((2 * 3.14)* level2[counter-1] * i / Fs )*amp; // formula in pdf
+        }
+        cout<<counter*adder<<"a";
+        cout<<level2[counter-1]<<" ";
+        counter++;
     }
-
-    for (int i = buff/4; i < buff/2; i++)
-    {
-        siz[i] = sin((2 * 3.14)* 82 * i / Fs )*amp; // formula in pdf
-    }
-
-    for (int i = buff/2; i < (buff/2+buff/4); i++)
-    {
-        siz[i] = sin((2 * 3.14)* 98 * i / Fs )*amp; // formula in pdf
-    }
-
-    for (int i = (buff/2+buff/4); i < buff; i++)
-    {
-        siz[i] = sin((2 * 3.14)* 82 * i / Fs )*amp; // formula in pdf
-    }
-
 
     out.write((const char*)&siz[0], buff*2);
 
