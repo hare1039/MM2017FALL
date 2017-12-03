@@ -9,7 +9,7 @@ using namespace std;
 
 const int freq = 400;
 const int Fs = 8000; //sampler rate
-const int sec = 4;
+const int sec = 17;
 const int channel = 1;
 const int bit = 16;
 const int amp = 32767; //16 bit: 32767~-32768
@@ -35,12 +35,11 @@ int main(int argc, char** argv)
         while(!imnotes.eof())
         {
             imnotes>>singlenote;
-            notes[counter++] = singlenote;
-            cout<<singlenote;
+            notes[counter] = singlenote;
+            counter = counter+1;
         }
     }
 
-    cout<<"\n";
 
     //process with input notes
 
@@ -63,53 +62,53 @@ int main(int argc, char** argv)
     double level2[1000];
     double level5[1000];
 
-    while(counter3 < counter2)
+    while(counter3 < (counter2-1))
     {
         if(intnotes[counter3] == 0)
         {
             level2[counter3] = 1;
-            level2[counter3] = 1;
+            level5[counter3] = 1;
         }
         else if(intnotes[counter3] == 1)
         {
             level2[counter3] = 65;
-            level2[counter3] = 523;
+            level5[counter3] = 523;
         }
         else if(intnotes[counter3] == 2)
         {
             level2[counter3] = 73;
-            level2[counter3] = 587;
+            level5[counter3] = 587;
         }
         else if(intnotes[counter3] == 3)
         {
             level2[counter3] = 82;
-            level2[counter3] = 659;
+            level5[counter3] = 659;
         }
         else if(intnotes[counter3] == 4)
         {
             level2[counter3] = 87;
-            level2[counter3] = 699;
+            level5[counter3] = 699;
         }
         else if(intnotes[counter3] == 5)
         {
             level2[counter3] = 98;
-            level2[counter3] = 784;
+            level5[counter3] = 784;
         }
         else if(intnotes[counter3] == 6)
         {
             level2[counter3] = 124;
-            level2[counter3] = 988;
+            level5[counter3] = 988;
         }
-        cout<<level2[counter3]<<" ";
         counter3++;
     }
+
 
     //end of process
 
     //input wav format
 
     ofstream out;
-    out.open("level2test.wav", ios::binary);
+    out.open("levelmixtest.wav", ios::binary);
 
     out.write("RIFF", 4);
     write<int>(out, 36 + (buff*sizeof(signed short)));
@@ -128,7 +127,12 @@ int main(int argc, char** argv)
 
     //output
 
+    //for mix
     short siz[buff];
+    //for lvls
+    short siz2[buff];
+    short siz5[buff];
+
     memset(siz, 0 , buff*2); //set memory space for siz
 
     /*
@@ -140,22 +144,70 @@ int main(int argc, char** argv)
 
     */
 
-    double adder = 0.0675;
+    double adder = 0.0558;
     //cout << adder << "f";
     counter = 1;
-    while(counter != 15)
+    while(counter != 17)
     {
         int i=0;
         for(i=((counter-1)*adder)*buff; i<(counter*adder)*buff; i++)
         {
-            siz[i] = sin((2 * 3.14)* level2[counter-1] * i / Fs )*amp; // formula in pdf
+            double checker = ((counter+1)*adder);
+            if(checker > 1)
+            siz2[i] = sin((2 * 3.14)* 1 * i / Fs )*amp;
+            else
+            siz2[i] = sin((2 * 3.14)* level2[counter-1] * i / Fs )*amp; // formula in pdf
         }
-        cout<<counter*adder<<"a";
-        cout<<level2[counter-1]<<" ";
         counter++;
     }
 
+    //out.write((const char*)&siz[0], buff*2);
+
+    counter = 1;
+
+    while(counter != 17)
+    {
+        int i=0;
+        for(i=((counter-1)*adder)*buff; i<(counter*adder)*buff; i++)
+        {
+            double checker = ((counter-1)*adder);
+            if(checker == 0)
+            siz5[i] = sin((2 * 3.14)* 1 * i / Fs )*amp;
+            else
+            siz5[i] = sin((2 * 3.14)* level5[counter-2] * i / Fs )*amp; // formula in pdf
+        }
+        counter++;
+    }
+
+    counter = 0;
+
+    for(int i=0; i<buff; i++)
+    {
+        siz[i] = (int)(0.5*siz2[i] + 0.5*siz5[i]);
+
+        if(siz[i] > 32767)
+            siz[i] = 32767;
+        else if(siz[i] < -32768)
+            siz[i] = -32768;
+    }
+
+    /*
+    for(int i=0; i<buff; i++)
+    {
+        siz[i] = (int)siz2[i];
+
+        if(siz[i] > 32767)
+            siz[i] = 32767;
+        else if(siz[i] < -32768)
+            siz[i] = -32768;
+    }
+    */
+
+
+
     out.write((const char*)&siz[0], buff*2);
+
+    cout<<"level mix test output complete.";
 
     out.close();
     return 0;
