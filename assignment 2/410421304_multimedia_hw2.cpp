@@ -22,6 +22,23 @@ template<typename Type> void write(ofstream& out, const Type& sting)
 
 int main(int argc, char** argv)
 {
+    char notes[1000];
+
+    ifstream imnotes;
+    imnotes.open("music note.txt");
+
+    if(imnotes.is_open())
+    {
+        while(!imnotes.eof())
+        {
+            imnotes>>notes;
+            cout<<notes;
+        }
+    }
+
+    cout<<"\n";
+
+
     ofstream out;
     out.open("sintest.wav", ios::binary);
 
