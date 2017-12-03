@@ -17,7 +17,7 @@ By this order, we could know that the example is song "little bee" with a slight
 When the total time exceed the space wav file had been given, it would stop recording.
  
 Flowchart:
-
+![pic]( https://user-images.githubusercontent.com/33059129/33530090-ff2e9ce6-d8b4-11e7-988f-140c44e02b4e.PNG "flow chart")
 About how my program works, it was made up with serveral parts:
 * First part is initial part. The values such as Fs, frquncy, sec, etc. With all these values here, we could easliy make
   change or modified the program just by do change in here.
@@ -37,6 +37,17 @@ or run .cpp by compiler, then the result of normal merge would be normalmerge.wa
 f=500 would be cosf500.wav, and f=800 would be cosf800.wav. And thats all of the requied results!
 
 Result display:
+![pic]( https://user-images.githubusercontent.com/33059129/33530100-3c3c059c-d8b5-11e7-9166-5a388a56c4b3.PNG "normal merge")
+* Normal Merge
+![pic]( https://user-images.githubusercontent.com/33059129/33530120-5e92b3b6-d8b5-11e7-9248-cc6e74d42e5e.PNG "100")
+* Modulation f = 100
+![pic]( https://user-images.githubusercontent.com/33059129/33530126-7daafb32-d8b5-11e7-96b2-65b3cee715b4.PNG "500")
+* Modulation f = 500
+![pic]( https://user-images.githubusercontent.com/33059129/33530128-8bfb5254-d8b5-11e7-8430-aee6737f4946.PNG "800")
+* Modulation f = 800
+
+It seems to be some frequncy change before and after modulation, but after modulation it seems to be at same frequncy on f change.
+
 
 Problem facing:
 
