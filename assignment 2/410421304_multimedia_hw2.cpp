@@ -107,6 +107,11 @@ int main(int argc, char** argv)
         }
         else if(intnotes[counter3] == 6)
         {
+            level2[counter3] = 110;
+            level5[counter3] = 880;
+        }
+        else if(intnotes[counter3] == 7)
+        {
             level2[counter3] = 124;
             level5[counter3] = 988;
         }
