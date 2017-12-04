@@ -37,14 +37,17 @@ or run .cpp by compiler, then the result of normal merge would be normalmerge.wa
 f=500 would be cosf500.wav, and f=800 would be cosf800.wav. And thats all of the requied results!
 
 Result display:
+* Normal Merge :
 ![pic]( https://user-images.githubusercontent.com/33059129/33530100-3c3c059c-d8b5-11e7-9166-5a388a56c4b3.PNG "normal merge")
-* Normal Merge
+ 
+ We can see that two wave merge to one.
+ 
+ * Modulation f = 100
 ![pic]( https://user-images.githubusercontent.com/33059129/33530120-5e92b3b6-d8b5-11e7-9248-cc6e74d42e5e.PNG "100")
-* Modulation f = 100
-![pic]( https://user-images.githubusercontent.com/33059129/33530126-7daafb32-d8b5-11e7-96b2-65b3cee715b4.PNG "500")
 * Modulation f = 500
-![pic]( https://user-images.githubusercontent.com/33059129/33530128-8bfb5254-d8b5-11e7-8430-aee6737f4946.PNG "800")
+![pic]( https://user-images.githubusercontent.com/33059129/33530126-7daafb32-d8b5-11e7-96b2-65b3cee715b4.PNG "500")
 * Modulation f = 800
+![pic]( https://user-images.githubusercontent.com/33059129/33530128-8bfb5254-d8b5-11e7-8430-aee6737f4946.PNG "800")
 
 It seems to be some frequncy change before and after modulation, but after modulation it seems to be at same frequncy on f change.
 
