@@ -54,7 +54,7 @@ Use some external program (here I use OpenMPT) to generate the visual shape of t
 
 It seems to be some frequncy change before and after modulation, but after modulation it seems to be at same frequncy on f change.
 
-Note:You can find these wav files under assignment 2's directory. If the web audio player does not work, try to download the file.)
+Note: You can find these wav files under assignment 2's directory. If the web audio player does not work, try to download the file.)
 
 Problem facing:
 
