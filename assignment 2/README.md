@@ -1,5 +1,8 @@
 # Mutimedia Assignment 2
 
+# Additional Tested Version update:17/12/06
+Today I add an additional tested version of the program. It make the time of your song no longer fix the length of 5 sec anymore. The change is that now the first input from the musicnote text file decide time length(interger), and the metre moved to second. Other things now reamain as well. Also note that the main output of song mix with two levels of song is **normalmerge.wav**, and the cosine ones is modified with modifier, so the voice must be a bit strange. 
+
 # Report and Discussion
 About the format:
 * Example:
