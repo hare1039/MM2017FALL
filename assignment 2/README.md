@@ -1,7 +1,18 @@
 # Mutimedia Assignment 2
 
-# Additional Tested Version update:17/12/06
-Today I add an additional tested version of the program. It make the time of your song no longer fix the length of 5 sec anymore. The change is that now the first input from the musicnote text file decide time length(interger), and the metre moved to second. Other things now reamain as well. Also note that the main output of song mix with two levels of song is **normalmerge.wav**, and the cosine ones is modified with modifier, so the voice must be a bit strange. 
+# "Additional" Tested Version update:2017/12/06
+Today 2 additional tested versions had been added in the repository.
+
+The fist one is **no-fix time edition**.
+It make the time of your song no longer fix the length of 5 sec anymore. The change is that now the first input from the musicnote text file decide time length(interger), and the metre moved to second. Other things now reamain as well. 
+
+The second is **All levels edtion**.
+In the base architech from no-fix time edition, this one give you another option: you can now create a simple song with a selected level!(between 0 - 8). Instead of two, now we have four parameter before input the notes. First two were same as above, the remain ones
+are level(0-8) and time delay with each music note. It will create an "**original.wav**" after processing all things need, have fun to compare that one with our original results!
+
+Both these two were enchance version of the required ones, have a look or simply ingnore that.
+
+Also note that the main output of song mix with two levels of song is **normalmerge.wav**, and the cosine ones is modified with modifier, so the voice must be a bit strange. 
 
 # Report and Discussion
 About the format:
