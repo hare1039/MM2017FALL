@@ -66,7 +66,7 @@ Use some external program (here I use OpenMPT) to generate the visual shape of t
 * Modulation with f = 800 (cosf800.wav):
 ![pic]( https://user-images.githubusercontent.com/33059129/33530128-8bfb5254-d8b5-11e7-8430-aee6737f4946.PNG "800")
 
-It seems to be some frequncy change before and after modulation, but after modulation it seems to be at same frequncy on f change.
+The frequncy changes by the modulation with the function, and different f value also give different result, which that four of them have different frequncy.
 
 Note: You can find these wav files under assignment 2's directory. If the web audio player does not work, try to download the file.)
 
