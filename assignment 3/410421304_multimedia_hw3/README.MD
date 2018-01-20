@@ -12,8 +12,7 @@ Problem facing:
 The theorem is easy to understand, but some part is difficult to accompilsh. Such as, we need first change the image from 3 channel to
 1 channel, then go through blocks in the search window, and find the motion vector that need to be use to generate the result. How to
 store the motion vector is just one of the task, in my case i prefer to store the first pixel of the best-match block, then calculate the
-motion vector later when we are going to generate the result. Some problems still exist, such as the 2D algorithm search, it is still not in its perfect stat. I will keep working on it, and also the
-hierarchical search.
+motion vector later when we are going to generate the result. Beside that I found that when I working on function in my program, it would slow down or even stall my computer, I think maybe is that I allocate some part of the address wrong or overflow. Some problems still exist, such as the 2D algorithm search, it is still not in its perfect stat. I will keep working on it, and also does the hierarchical search.
 
 Result discussion:
 
@@ -29,7 +28,8 @@ theorom of motion compensation.
 It is still hard for me to operate a program with visual studio. Although I had use it a lot in this semester, I am stilll scratch
 and keep finding result when a new problem emerge. This time I prefer to write a mid-report before full complish the programm, because I
 think maybe after I record down all the problem I was facing, I could have a better and clear look on my program, and can keep up 
-the energy working on those unsolve problem. Although some problem still done yet, I thought I will keep trying until I solve it.
+the energy working on those unsolve problem and keep track of which problem I had facing. Although some problem still done yet, I thought 
+I will keep trying until I solve it.
 
 *Readding, coding, debugging. This is what I had done this program, by this circulation.*
   
