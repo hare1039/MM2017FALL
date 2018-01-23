@@ -1,5 +1,7 @@
 # Mutimedia Assignment 3 - Temporarl Design Report
 
+#Update 1/23: Program update with slightly better 2D logarithm result and SNR
+
 # Report and Discussion
 
 
