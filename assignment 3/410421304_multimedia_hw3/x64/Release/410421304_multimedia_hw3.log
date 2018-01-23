@@ -1,11 +1,11 @@
 ﻿  410421304_multimedia_hw3.cpp
-410421304_multimedia_hw3.cpp(53): warning C4244: '=': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(73): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(107): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(230): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(309): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(311): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(373): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(54): warning C4244: '=': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(74): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(117): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(126): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(200): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(202): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(260): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
 410421304_multimedia_hw3.cpp(40): warning C4101: 'temp': 未參考的區域變數
   正在產生程式碼
   1 of 202 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
