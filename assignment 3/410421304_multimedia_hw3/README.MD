@@ -1,6 +1,7 @@
 # Mutimedia Assignment 3 - Temporarl Design Report
 
 #Update 1/23: Program update with slightly better 2D logarithm result and SNR
+Current Sequnetial Search SNR:~0.3 Current 2D logaritmic Search SNR:~0.06
 
 # Report and Discussion
 
