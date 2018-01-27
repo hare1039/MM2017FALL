@@ -6,7 +6,9 @@
 410421304_multimedia_hw3.cpp(200): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
 410421304_multimedia_hw3.cpp(202): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
 410421304_multimedia_hw3.cpp(260): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(310): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(268): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(311): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(341): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
 410421304_multimedia_hw3.cpp(40): warning C4101: 'temp': 未參考的區域變數
   正在產生程式碼
   1 of 202 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
