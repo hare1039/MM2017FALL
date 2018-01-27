@@ -3,6 +3,9 @@
 #Update 1/23: Program update with slightly better 2D logarithm result and SNR
 Current Sequnetial Search SNR:~0.3 Current 2D logaritmic Search SNR:~0.06
 
+#Update 1/28: Some previous push include hierachical search and update new SNR rate
+Current Sequnetial Search SNR:~15 Current 2D logaritmic Search SNR:~6 Hierachical Search SNR:~12
+
 # Report and Discussion
 
 
