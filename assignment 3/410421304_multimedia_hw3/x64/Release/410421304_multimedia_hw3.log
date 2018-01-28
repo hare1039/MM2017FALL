@@ -1,15 +1,15 @@
 ﻿  410421304_multimedia_hw3.cpp
-410421304_multimedia_hw3.cpp(54): warning C4244: '=': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(74): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(120): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(129): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(203): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(205): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(265): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(273): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(316): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(346): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
-410421304_multimedia_hw3.cpp(40): warning C4101: 'temp': 未參考的區域變數
+410421304_multimedia_hw3.cpp(50): warning C4244: '=': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(70): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(104): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(113): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(185): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(187): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(234): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(242): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(285): warning C4244: '=': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(315): warning C4244: '正在初始化': 將 'DWORD' 轉換為 'float'，由於類型不同，可能導致資料遺失
+410421304_multimedia_hw3.cpp(37): warning C4101: 'temp': 未參考的區域變數
   正在產生程式碼
   1 of 202 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
