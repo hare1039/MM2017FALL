@@ -35,7 +35,7 @@ and keep finding result when a new problem emerge. This time I prefer to write a
 think maybe after I record down all the problem I was facing, I could have a better and clear look on my program, and can keep up 
 the energy working on those unsolve problem and keep track of which problem I had facing.
 
-After the mid report, I surely improve some parts of the program, such as I had a better result of 2D logarithm search, more accurate SNR, and also I had complete the hierachical search part. I found that it is a great thing to recored what wrong now and wait a lit tle bit time for thinking about what did wrong, keep going when realize what the problem is(and sovle it). Although the result is not that perfect at some part this time, I had learn some precious experience from this.
+After the mid report(had been rename as Midreport.Md in the repo), I surely improve some parts of the program, such as I had a better result of 2D logarithm search, more accurate SNR, and also I had complete the hierachical search part. I found that it is a great thing to recored what wrong now and wait a lit tle bit time for thinking about what did wrong, keep going when realize what the problem is(and sovle it). Although the result is not that perfect at some part this time, I had learn some precious experience from this.
 
 *Readding, coding, debugging. This is what I had done this program, by this circulation.*
   
