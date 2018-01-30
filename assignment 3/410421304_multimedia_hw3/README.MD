@@ -7,7 +7,7 @@ Result display:
 ![pic](https://user-images.githubusercontent.com/33059129/35548752-870a0c02-05bc-11e8-9c4f-e5232c4be571.PNG "resullt4")
 This picture display the result from second version of the program.
 
-Sequenal Search SNR:~16 Current 2D logaritmic Search SNR:~15 Hierachical Search SNR:~12
+Sequenal Search SNR:~16 Current 2D logaritmic Search SNR:~15 Hierachical Search SNR:~13
 Response time for Sequential Search:~600ms for 2D logaritmic Search:32ms forHierachical Search:<1ms
 
 Problem facing:
