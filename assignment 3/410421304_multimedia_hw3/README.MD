@@ -27,7 +27,7 @@ result at some moment.
 
 What I have learn:
 
-I had already learn how to change the image between channels by convert colors, use getticket to calculate time, and the
+I had learn how to change the image between channels by convert colors, use getticket to calculate time, and the
 theorom of motion compensation. Also something such as image pyramid from hierachical search, or the meaing of SNR rate.
 
 It is still hard for me to operate a program with visual studio. Although I had use it a lot in this semester, I am stilll scratch
