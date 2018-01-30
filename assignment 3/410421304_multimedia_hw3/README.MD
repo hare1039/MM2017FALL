@@ -7,8 +7,8 @@ Result display:
 ![pic](https://user-images.githubusercontent.com/33059129/35548752-870a0c02-05bc-11e8-9c4f-e5232c4be571.PNG "resullt4")
 This picture display the result from second version of the program.
 
-Sequenal Search SNR:~16 Current 2D logaritmic Search SNR:~15 Hierachical Search SNR:~13
-Response time for Sequential Search:~600ms for 2D logaritmic Search:32ms forHierachical Search:<1ms
+* Sequenal Search SNR:~16 Current 2D logaritmic Search SNR:~15 Hierachical Search SNR:~13
+* Response time for Sequential Search:~600ms for 2D logaritmic Search:32ms forHierachical Search:<1ms
 
 Problem facing:
 
@@ -19,9 +19,12 @@ Some problems still exist, such as the 2D algorithm search, it is still not in i
 
 Result discussion:
 
-* Alhough 2D Logarithm is much faster, its accuracy is slightly less than sequntial search. The reason is that the sequntial search
+* We havev to kind of search to compare with the exhausted one:
+   * Alhough 2D Logarithm is much faster, its accuracy is slightly less than sequntial search. The reason is that the sequntial search
 go through all the possible blocks, but 2D Logarithm search just go through some of "much possible" blocks, which may find some worse
-result at some moment. So as hierarchical search, it seems to be much faster then both sequnetial search and 2D logarithm, nut when it comes to the accuracy, it still have some difference between them. It is just a trade-off, depend on how accuarte or how fast you want to choose the best algorithm to use.
+result at some moment. 
+   * So as hierarchical search, it seems to be much faster then both sequnetial search and 2D logarithm, nut when it comes to the accuracy, it still have some difference between them. 
+ * Conclusion: It is just a trade-off, depend on how accuarte or how fast you want to choose the best algorithm to use.
 
 What I have learn:
 
