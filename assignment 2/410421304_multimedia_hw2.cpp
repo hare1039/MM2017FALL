@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <cmath>
 
 using namespace std;
@@ -19,7 +19,7 @@ const double D = 1;
 
 template<typename Type> void write(ofstream& out, const Type& sting)
 {
-	out.write((const char*)&sting, sizeof(Type));
+    out.write((const char*)&sting, sizeof(Type));
 }
 
 int main(int argc, char** argv)
