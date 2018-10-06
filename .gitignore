@@ -1,0 +1,4 @@
+#exclude execulables
+
+**/*.exe
+**/*.o
